@@ -3,43 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>RPS-UI</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <script>
-        function getComputerChoice() {
-            let choice = Math.floor(Math.random() * 3);
-            switch (choice) {
-                case 0: return "Rock"; 
-                case 1: return "Paper"; 
-                case 2: return "Scissors"; 
-            }
-        }
-        function capitalise(inString) {
-            return inString.slice(0,1).toUpperCase() + inString.slice(1).toLowerCase();
-        }
-        function playRound(playerChoice,computerChoice) {
-            if (playerChoice == computerChoice) {
-                return `You draw!  You both chose "${playerChoice}"`;
-            }
-            if ((playerChoice == "Rock" && computerChoice == "Scissors") ||
-                (playerChoice == "Paper" && computerChoice == "Rock") ||
-                (playerChoice == "Scissors" && computerChoice == "Paper")) {
-                return `You win! ${playerChoice} beats ${computerChoice}`;
-            }
-            return `You lose!  ${computerChoice} beats ${playerChoice}`;
-        }
-        function play(choice) {
-            choice = capitalise(choice);
-            switch (choice) {
-                case "Rock":
-                case "Paper":
-                case "Scissors":
-                    return playRound(choice,getComputerChoice());
-                    break;
-                default:
-                    return `${choice} is not a valid move to play!`;
-            }
-        }
-    </script>
+    <button id="rock">ROCK</button>
+    <button id="paper">PAPER</button>
+    <button id="scissors">SCISSORS</button>
 </body>
 </html>
