@@ -40,29 +40,6 @@
                     return `${choice} is not a valid move to play!`;
             }
         }
-        function playBestOfFive(choice) {
-            choice = capitalise(choice);
-            if (choice == "Rock" || choice == "Paper" || choice == "Scissors") {
-              let wins=0, losses=0;
-              while (wins < 3 && losses < 3) {
-                let result = play(choice);
-                if (result.slice(0,7) == "You win") wins++;
-                if (result.slice(0,8) == "You lose") losses++;
-                console.log(result);
-              }
-              if (wins > losses) {
-                return "You won best of five!";
-              } else {
-                return "You lost best of five!";
-              }
-
-            }
-            return play(choice);
-        }
-        for (let l = 0; l < 100; l++) {
-            let playerChoice = prompt("Rock, Paper, Scissors");
-            console.log(play(playerChoice));
-        }
     </script>
 </body>
 </html>
